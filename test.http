@@ -1,0 +1,33 @@
+###
+POST http://localhost:3000/users/addApp
+Content-Type: application/json
+
+{
+    "appId": "abc",
+    "appSecret": "123456"
+}
+
+
+###
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+    "username": "xiaowei",
+    "password": "xiaowei",
+    "email": "xiaowei",
+    "appId": "abc",
+    "appSecret": "123456"
+}
+
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "username": "xiaowei",
+    "password": "xiaowei",
+    "appId": "abc",
+    "appSecret": "123456"
+}

@@ -1,0 +1,36 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// schema.prisma
+
+// 定义用户模型
+model User {
+  id       Int      @id @default(autoincrement())
+  username String   @unique
+  password String
+  email    String
+
+  // 添加 createdAt 和 updatedAt 字段
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// 定义应用密钥模型
+model AppSecret {
+  id        Int    @id @default(autoincrement())
+  appId     String
+  secret    String
+
+  // 添加 createdAt 和 updatedAt 字段
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
